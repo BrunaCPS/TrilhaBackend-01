@@ -1,6 +1,7 @@
 ﻿Console.WriteLine("Boas Vindas ao ByteBank, Atendimento.");
 //TestaArrayInt();
-TestaBuscarPalavra();
+//TestaBuscarPalavra();
+
 /*void TestaArrayInt()
 {
     int[] idades = new int[5];
@@ -23,7 +24,7 @@ TestaBuscarPalavra();
     Console.WriteLine($"Média: {media}");
 }*/
 
-void TestaBuscarPalavra(){
+/*void TestaBuscarPalavra(){
 
 string[] arrayPalavras = new string[5];
 
@@ -42,6 +43,35 @@ foreach(string palavra in arrayPalavras){
         //ou return
         break;
     }
-    
 }
 }
+*/
+//classe array
+Array amostra = Array.CreateInstance(typeof(double), 5);
+amostra.SetValue(5.9, 0);
+amostra.SetValue(1.8, 1);
+amostra.SetValue(7.1, 2);
+amostra.SetValue(10, 3);
+amostra.SetValue(6.9, 4);
+
+TestaMediana(amostra);
+
+void TestaMediana(Array array)
+{
+    if ((array == null) || (array.Length == 0))
+    {
+        Console.WriteLine("Array está vazio ou nulo");
+    }
+
+        //cria array reserva
+        double[] numerosOrdenados = (double[])array.Clone();
+        //metodo sort
+        Array.Sort(numerosOrdenados);
+
+        //calculo mediana
+        int tamanho = numerosOrdenados.Length;
+        int meio = tamanho / 2;
+        double mediana = (tamanho % 2 != 0) ? numerosOrdenados[meio] : (numerosOrdenados[meio] + numerosOrdenados[meio - 1]) / 2;
+
+        Console.WriteLine($"Com base na amostra, a mediana é {mediana}");
+    }
