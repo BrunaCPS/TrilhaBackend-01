@@ -1,8 +1,14 @@
-﻿Console.WriteLine("Boas Vindas ao ByteBank, Atendimento.");
-//TestaArrayInt();
-//TestaBuscarPalavra();
+﻿using System.Collections;
 
-/*void TestaArrayInt()
+Console.WriteLine("Boas Vindas ao ByteBank, Atendimento.");
+
+#region Exemplos de Array e métodos em C#
+Console.WriteLine("\nCálculo da Media");
+TestaArrayInt();
+Console.WriteLine("\nBusca por palavras");
+TestaBuscarPalavra();
+
+void TestaArrayInt()
 {
     int[] idades = new int[5];
     idades[0] = 30;
@@ -22,15 +28,15 @@
     }
     int media = acumulador / idades.Length;
     Console.WriteLine($"Média: {media}");
-}*/
+}
 
-/*void TestaBuscarPalavra(){
+void TestaBuscarPalavra(){
 
 string[] arrayPalavras = new string[5];
 
 for(int i = 0; i < arrayPalavras.Length; i++){
     Console.Write($"Digite {i+1}ª palavra: ");
-    arrayPalavras[i] = Console.ReadLine();
+    arrayPalavras[i] = Console.ReadLine()!;
 }
 
 Console.Write("Digite a palavra a ser encontrada: ");
@@ -45,7 +51,7 @@ foreach(string palavra in arrayPalavras){
     }
 }
 }
-*/
+
 //classe array
 Array amostra = Array.CreateInstance(typeof(double), 5);
 amostra.SetValue(5.9, 0);
@@ -54,6 +60,7 @@ amostra.SetValue(7.1, 2);
 amostra.SetValue(10, 3);
 amostra.SetValue(6.9, 4);
 
+Console.WriteLine("\nCálculo da Mediana");
 TestaMediana(amostra);
 
 void TestaMediana(Array array)
@@ -63,9 +70,9 @@ void TestaMediana(Array array)
         Console.WriteLine("Array está vazio ou nulo");
     }
 
-        //cria array reserva
+        //cria array reserva com método Clone()
         double[] numerosOrdenados = (double[])array.Clone();
-        //metodo sort
+        //metodo Sort() para ordenar
         Array.Sort(numerosOrdenados);
 
         //calculo mediana
@@ -75,3 +82,5 @@ void TestaMediana(Array array)
 
         Console.WriteLine($"Com base na amostra, a mediana é {mediana}");
     }
+
+#endregion
