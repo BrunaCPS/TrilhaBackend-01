@@ -1,0 +1,15 @@
+C:\Users\BrunaCostaPinheirode\Documents\Trilha-01\TrilhaBackend-01\orientacao_objetos\obj\Debug\net8.0\orientacao_objetos.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\BrunaCostaPinheirode\Documents\Trilha-01\TrilhaBackend-01\orientacao_objetos\obj\Debug\net8.0\orientacao_objetos.AssemblyInfoInputs.cache
+C:\Users\BrunaCostaPinheirode\Documents\Trilha-01\TrilhaBackend-01\orientacao_objetos\obj\Debug\net8.0\orientacao_objetos.AssemblyInfo.cs
+C:\Users\BrunaCostaPinheirode\Documents\Trilha-01\TrilhaBackend-01\orientacao_objetos\obj\Debug\net8.0\orientacao_objetos.csproj.CoreCompileInputs.cache
+C:\Users\BrunaCostaPinheirode\Documents\Trilha-01\TrilhaBackend-01\orientacao_objetos\obj\Debug\net8.0\orientacao_objetos.sourcelink.json
+C:\Users\BrunaCostaPinheirode\Documents\Trilha-01\TrilhaBackend-01\orientacao_objetos\bin\Debug\net8.0\orientacao_objetos.exe
+C:\Users\BrunaCostaPinheirode\Documents\Trilha-01\TrilhaBackend-01\orientacao_objetos\bin\Debug\net8.0\orientacao_objetos.deps.json
+C:\Users\BrunaCostaPinheirode\Documents\Trilha-01\TrilhaBackend-01\orientacao_objetos\bin\Debug\net8.0\orientacao_objetos.runtimeconfig.json
+C:\Users\BrunaCostaPinheirode\Documents\Trilha-01\TrilhaBackend-01\orientacao_objetos\bin\Debug\net8.0\orientacao_objetos.dll
+C:\Users\BrunaCostaPinheirode\Documents\Trilha-01\TrilhaBackend-01\orientacao_objetos\bin\Debug\net8.0\orientacao_objetos.pdb
+C:\Users\BrunaCostaPinheirode\Documents\Trilha-01\TrilhaBackend-01\orientacao_objetos\obj\Debug\net8.0\orientacao_objetos.dll
+C:\Users\BrunaCostaPinheirode\Documents\Trilha-01\TrilhaBackend-01\orientacao_objetos\obj\Debug\net8.0\refint\orientacao_objetos.dll
+C:\Users\BrunaCostaPinheirode\Documents\Trilha-01\TrilhaBackend-01\orientacao_objetos\obj\Debug\net8.0\orientacao_objetos.pdb
+C:\Users\BrunaCostaPinheirode\Documents\Trilha-01\TrilhaBackend-01\orientacao_objetos\obj\Debug\net8.0\orientacao_objetos.genruntimeconfig.cache
+C:\Users\BrunaCostaPinheirode\Documents\Trilha-01\TrilhaBackend-01\orientacao_objetos\obj\Debug\net8.0\ref\orientacao_objetos.dll
