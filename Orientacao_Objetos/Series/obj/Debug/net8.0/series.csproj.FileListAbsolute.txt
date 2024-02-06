@@ -1,0 +1,15 @@
+C:\Users\BrunaCostaPinheirode\Documents\Trilha-01\TrilhaBackend-01\orientacao_objetos\series\obj\Debug\net8.0\series.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\BrunaCostaPinheirode\Documents\Trilha-01\TrilhaBackend-01\orientacao_objetos\series\obj\Debug\net8.0\series.AssemblyInfoInputs.cache
+C:\Users\BrunaCostaPinheirode\Documents\Trilha-01\TrilhaBackend-01\orientacao_objetos\series\obj\Debug\net8.0\series.AssemblyInfo.cs
+C:\Users\BrunaCostaPinheirode\Documents\Trilha-01\TrilhaBackend-01\orientacao_objetos\series\obj\Debug\net8.0\series.csproj.CoreCompileInputs.cache
+C:\Users\BrunaCostaPinheirode\Documents\Trilha-01\TrilhaBackend-01\orientacao_objetos\series\obj\Debug\net8.0\series.sourcelink.json
+C:\Users\BrunaCostaPinheirode\Documents\Trilha-01\TrilhaBackend-01\orientacao_objetos\series\bin\Debug\net8.0\series.exe
+C:\Users\BrunaCostaPinheirode\Documents\Trilha-01\TrilhaBackend-01\orientacao_objetos\series\bin\Debug\net8.0\series.deps.json
+C:\Users\BrunaCostaPinheirode\Documents\Trilha-01\TrilhaBackend-01\orientacao_objetos\series\bin\Debug\net8.0\series.runtimeconfig.json
+C:\Users\BrunaCostaPinheirode\Documents\Trilha-01\TrilhaBackend-01\orientacao_objetos\series\bin\Debug\net8.0\series.dll
+C:\Users\BrunaCostaPinheirode\Documents\Trilha-01\TrilhaBackend-01\orientacao_objetos\series\bin\Debug\net8.0\series.pdb
+C:\Users\BrunaCostaPinheirode\Documents\Trilha-01\TrilhaBackend-01\orientacao_objetos\series\obj\Debug\net8.0\series.dll
+C:\Users\BrunaCostaPinheirode\Documents\Trilha-01\TrilhaBackend-01\orientacao_objetos\series\obj\Debug\net8.0\refint\series.dll
+C:\Users\BrunaCostaPinheirode\Documents\Trilha-01\TrilhaBackend-01\orientacao_objetos\series\obj\Debug\net8.0\series.pdb
+C:\Users\BrunaCostaPinheirode\Documents\Trilha-01\TrilhaBackend-01\orientacao_objetos\series\obj\Debug\net8.0\series.genruntimeconfig.cache
+C:\Users\BrunaCostaPinheirode\Documents\Trilha-01\TrilhaBackend-01\orientacao_objetos\series\obj\Debug\net8.0\ref\series.dll
