@@ -47,20 +47,36 @@ void Menu()
 
 void AdicionarProduto()
 {
-    int quantidadeNovoProduto;
+    int quantidadeNovoProduto = 0;
     Console.Clear();
     Console.WriteLine("Qual produto deseja adicionar no estoque?");
     string novoProduto = Console.ReadLine()!.ToLower();
 
-    do
+    if (estoque.ContainsKey(novoProduto))
     {
-        Console.WriteLine("Qual a quantidade deste produto deseja adicionar no estoque?");
-        quantidadeNovoProduto = int.Parse(Console.ReadLine()!);
-    } while (quantidadeNovoProduto <= 0);
+        Console.WriteLine("Produto já existe...");
+        VoltarAoMenu();
+    }
+    else
+    {
+        do
+        {
+            Console.WriteLine("Qual a quantidade deste produto deseja adicionar no estoque?");
+            string valor = Console.ReadLine()!;
 
-    estoque.Add(novoProduto, quantidadeNovoProduto);
-    Console.WriteLine($"\nProduto {novoProduto} adicionado ao estoque!");
-    VoltarAoMenu();
+            if(int.TryParse(valor, out quantidadeNovoProduto) && quantidadeNovoProduto > 0){
+                break;
+            }else{
+                Console.WriteLine("\nDigite uma quantidade válida...");
+            }
+        } while (true);
+
+        estoque.Add(novoProduto, quantidadeNovoProduto);
+        Console.WriteLine($"\nProduto {novoProduto} adicionado ao estoque!");
+        VoltarAoMenu();
+    }
+
+
 
 }
 
@@ -108,7 +124,7 @@ void AjustarEstoque()
             Console.WriteLine("Quantidade que deseja ajustar: ");
             quantidadeAjustada = int.Parse(Console.ReadLine()!);
         } while (quantidadeAjustada <= 0);
-        
+
         estoque[produto] = quantidadeAjustada;
         Console.WriteLine("Ajuste realizado com sucesso!");
         VoltarAoMenu();
