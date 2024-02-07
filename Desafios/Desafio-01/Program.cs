@@ -64,17 +64,22 @@ void AdicionarProduto()
             Console.WriteLine("Qual a quantidade deste produto deseja adicionar no estoque?");
             string valor = Console.ReadLine()!;
 
-            if(int.TryParse(valor, out quantidadeNovoProduto) && quantidadeNovoProduto > 0){
+            if (int.TryParse(valor, out quantidadeNovoProduto) && quantidadeNovoProduto > 0)
+            {
                 break;
-            }else{
+            }
+            else
+            {
                 Console.WriteLine("\nDigite uma quantidade válida...");
             }
         } while (true);
+
 
         estoque.Add(novoProduto, quantidadeNovoProduto);
         Console.WriteLine($"\nProduto {novoProduto} adicionado ao estoque!");
         VoltarAoMenu();
     }
+
 
 
 
