@@ -11,7 +11,9 @@ using (HttpClient client = new HttpClient())
         //Desserialização -> Pega o JSON e converte em um objeto manipulável em C#
         var musicas = JsonSerializer.Deserialize<List<Musica>>(resposta)!;
         //LinqFilter.FiltrarTodosGenerosMusicais(musicas);
-        LinqOrder.ExibirListaArtistasOrdenados(musicas);
+        //LinqOrder.ExibirListaArtistasOrdenados(musicas);
+        //LinqFilter.FiltrarArtistasPorGeneroMusical(musicas, "rock");
+        LinqFilter.FiltrarMusicasDeUmArtista(musicas,"Michel Teló");
     }
     catch (Exception ex)
     {
