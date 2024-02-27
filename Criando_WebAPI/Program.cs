@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
-//builder para se CONEXAO COM O BANCO
+//builder para CONEXAO COM O BANCO
 var connectionString = builder.Configuration.GetConnectionString("FilmeConnection");
 builder.Services.AddDbContext<FilmeContext>(opts => opts.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString)));
 
@@ -11,12 +11,10 @@ builder.Services.AddDbContext<FilmeContext>(opts => opts.UseMySql(connectionStri
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
 
-
-//até aqui foi eu quem escrevi!!!
-
 // Add services to the container.
-
-builder.Services.AddControllers();
+//FOI ADICIONADO O Add.NewtonsoftJson() para usar o PATH
+builder.Services.AddControllers().AddNewtonsoftJson();
+//até aqui foi eu quem escrevi!!!
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();

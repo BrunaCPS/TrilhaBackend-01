@@ -2,6 +2,7 @@ using AutoMapper;
 using Criando_WebAPI.Data;
 using Criando_WebAPI.Data.Dtos;
 using Criando_WebAPI.Models;
+using Microsoft.AspNetCore.JsonPatch;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Criando_WebAPI.Controllers;
@@ -25,6 +26,7 @@ public class FilmeController : ControllerBase
     }
 
     [HttpPost]
+    [ProducesResponseType(StatusCodes.Status201Created)]
     //Cadastrar filme no sistema
     public IActionResult AdicionarFilme([FromBody] CreateFilmeDto filmeDto)
     {
@@ -32,17 +34,17 @@ public class FilmeController : ControllerBase
         Filme filme = _mapper.Map<Filme>(filmeDto);
         _context.Filmes.Add(filme);
         _context.SaveChanges();
-        return CreatedAtAction(nameof(RecuperaFilmePorId), new {id = filme.Id}, filme);
+        return CreatedAtAction(nameof(RecuperaFilmePorId), new { id = filme.Id }, filme);
     }
 
     //Recuperacao de dados
     [HttpGet]
     //Uso do IEnumerable para deixar o método abstrato, para depender de interface e não de uma classe concreta
-    public IEnumerable<Filme> LerFilmes([FromQuery] int skip = 0, [FromQuery] int take = 50) //Usuario passará parametro na propra consulta, caso não passar entrará os valores padroes
+    public IEnumerable<ReadFilmeDto> LerFilmes([FromQuery] int skip = 0, [FromQuery] int take = 50) //Usuario passará parametro na propra consulta, caso não passar entrará os valores padroes
     {
         //Skip para pular X elementos e Take para pegar X elementos
         //Pegará de 50 a 59
-        return _context.Filmes.Skip(skip).Take(take);
+        return _mapper.Map<List<ReadFilmeDto>>(_context.Filmes.Skip(skip).Take(take));
     }
 
     //Como saber qual GET o programa vai executar?
@@ -55,6 +57,52 @@ public class FilmeController : ControllerBase
 
         var filme = _context.Filmes.FirstOrDefault(filme => filme.Id == id);
         if (filme == null) return NotFound();
-        return Ok(filme);
+        var filmeDto = _mapper.Map<ReadFilmeDto>(filme);
+        return Ok(filmeDto);
+    }
+
+    [HttpPut("{id}")]
+
+    public ActionResult AtualizaFilme(int id, [FromBody] UpdateFilmeDto filmeDto)
+    {
+        var filme = _context.Filmes.FirstOrDefault(filme => filme.Id == id);
+        if (filme == null) return NotFound();
+        //mapeamento os campos do meu filme a partir de um filme DTO
+        _mapper.Map(filmeDto, filme);
+        _context.SaveChanges();
+        //usado para quando é feita alguma atualizacao, retorno é 204
+        return NoContent();
+    }
+
+    //Path usado para atualizações parciais, o PUT precisa passar o Objeto todo "UpdateFilmeDto filmeDto" mesmo que for atualizar 2 campos de 4, por exemplo, já o Path não
+    [HttpPatch("{id}")]
+    public ActionResult AtualizaFilmeParcial(int id, JsonPatchDocument<UpdateFilmeDto> patch)
+    {
+        var filme = _context.Filmes.FirstOrDefault(filme => filme.Id == id);
+        if (filme == null) return NotFound();
+
+        var filmeParaAtualizar = _mapper.Map<UpdateFilmeDto>(filme);
+        patch.ApplyTo(filmeParaAtualizar, ModelState);
+
+        if (!TryValidateModel(filmeParaAtualizar))
+        {
+            return ValidationProblem(ModelState);
+        }
+        //mapeamento os campos do meu filme a partir de um filme DTO
+        _mapper.Map(filmeParaAtualizar, filme);
+        _context.SaveChanges();
+        //usado para quando é feita alguma atualizacao, retorno é 204
+        return NoContent();
+    }
+
+    [HttpDelete("{id}")]
+    public IActionResult DeletaFilme(int id)
+    {
+        var filme = _context.Filmes.FirstOrDefault(filme => filme.Id == id);
+        if (filme == null) return NotFound();
+        //caso exista o filme
+        _context.Remove(filme);
+        _context.SaveChanges();
+        return NoContent();
     }
 }
