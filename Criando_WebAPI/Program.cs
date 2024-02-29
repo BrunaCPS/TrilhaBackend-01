@@ -5,7 +5,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 //builder para CONEXAO COM O BANCO
 var connectionString = builder.Configuration.GetConnectionString("FilmeConnection");
-builder.Services.AddDbContext<FilmeContext>(opts => opts.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString)));
+builder.Services.AddDbContext<FilmeContext>(opts => opts.UseLazyLoadingProxies().UseMySql(connectionString, ServerVersion.AutoDetect(connectionString)));
 
 //adicionar o AutoMapper na aplicação como um todo
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
